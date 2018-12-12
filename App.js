@@ -12,6 +12,7 @@ const image2 = require('./assets/img2.jpg')
 const image3 = require('./assets/english.png')
 
 var data = [
+  {title:"ARIBICE", image: image1, color: 'lightblue'}, 
   {title:"ENGLISH", image: image1, color: 'green'}, 
   {title:"URDU", image: image2, color: '#9dd463'}, 
   {title:"MATH", image: image3, color: 'lightblue'}, 
