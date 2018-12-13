@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { AppRegistry, SectionList, StyleSheet, Text, View, ListView, ScrollView, Button, RefreshControl } from 'react-native';
 import Row from './row'; //If it's on the same folder
 // import { Icon } from 'react-native-elements'
+import TestUI from './comp/TestUI';
 import {
   createStackNavigator,
 } from 'react-navigation';
+
+
 
 // // Require all your images here
 const image1 = require('./assets/img1.jpg')
@@ -12,7 +15,7 @@ const image2 = require('./assets/img2.jpg')
 const image3 = require('./assets/english.png')
 
 var data = [
-  {title:"ARIBICE", image: image1, color: 'lightblue'}, 
+ 
   {title:"ENGLISH", image: image1, color: 'green'}, 
   {title:"URDU", image: image2, color: '#9dd463'}, 
   {title:"MATH", image: image3, color: 'lightblue'}, 
@@ -34,6 +37,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   }, 
+  
+  button: {
+    backgroundColor: 'green',
+    width: '40%',
+    height: 40
+  }
+
 })
  
 
@@ -61,6 +71,7 @@ class HomeScreen extends React.Component {
     return (
      
       <View style={styles.container}> 
+     
         <ListView
           style={{width: '100%'}}
           dataSource={this.state.dataSource}
@@ -94,7 +105,7 @@ class SupjectDetailScreen extends React.Component {
     console.log(this.props.navigation.state.params)
     const {item} = this.props.navigation.state.params;
     return (
-      <View>
+      <View style={styles.container}>
       <Text>{item.title}</Text>
         <Button
           title="Go to Subject"
@@ -102,6 +113,15 @@ class SupjectDetailScreen extends React.Component {
             navigate('Subject', { name: 'navigate.state.params.title' })
           }
         />
+         
+          <Button           
+          title=" Test Start"
+          color="#841584"
+          onPress={() =>
+            navigate('TestUI')
+          }
+        />
+        
       </View>
     );
   }
@@ -112,6 +132,9 @@ class SupjectDetailScreen extends React.Component {
 const App = createStackNavigator({
   Home: { screen: HomeScreen },
   Subject: { screen: SupjectDetailScreen },
+  TestUI : {screen:TestUI}
 });
+
+
 
 export default App;
