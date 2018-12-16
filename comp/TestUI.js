@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import {Text,Button,View,TouchableOpacity,  StyleSheet } from 'react-native';
+import {Text,Button,View,TouchableOpacity,  StyleSheet, ScrollView } from 'react-native';
 
 class TestUi extends Component {
    
     
     render() { 
         return (
-            <View style={styles.container}>
+            <ScrollView contentContainerStyle={styles.container}>
                 
                 <View style={styles.header} >
-                <Text style={{padding: 10, fontSize: 20}}>start</Text>
+                <Text style={{padding: 10, fontSize: 20}}>This defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items arThis defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).</Text>
                 </View>
+                
                 <View style={styles.btnDiv}>
-
                     <TouchableOpacity style={styles.button} >
-                        <Text style={{lineItem: "center"}}>ans1</Text>
+                        <Text>ans1</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} >
                         <Text>ans 2</Text>
                     </TouchableOpacity>
-          
                 </View>
-                <View style={styles.btnDiv1}>
+
+                <View style={styles.btnDiv}>           
                     <TouchableOpacity style={styles.button} >
                         <Text>ans 3</Text>
                     </TouchableOpacity>
@@ -29,50 +29,46 @@ class TestUi extends Component {
                         <Text>ans 4</Text>
                     </TouchableOpacity>
                 </View>
+
                 <View >
-                    <TouchableOpacity style={styles.next}>
+                    <TouchableOpacity style={styles.nextBtn}>
                         <Text> Next </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
           );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-     justifyContent: 'center',      
+     justifyContent: 'center',
+     padding: '5%',       
     },
     header: {
-        width: 300,
-        height: 100, 
+        width: '100%',
+        height: 'auto', 
         backgroundColor: 'powderblue', 
-        marginTop: 30, 
-        marginLeft: 30
+        marginTop: 30,  
     },
-    btnDiv: {
+    btnDiv: { 
         flexDirection: 'row',
-        justifyContent: 'space-around',       
-        padding: 10,      
-    },
-    btnDiv1: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',       
-        paddingLeft: 10, 
-        paddingRight:10,
-
-    },    
-    button: {
+        justifyContent: 'space-between',   
+        paddingTop: '2%',
+    }, 
+    button: { 
+      justifyContent: 'center', 
       alignItems: 'center',
-      width: '40%',
-      height: 50,
+      width: '48%',
+      height: 40, 
       backgroundColor: '#DDDDDD',     
     },
-    next: {
-        width: '85%',
-        height: 30,
-        backgroundColor: 'blue',
-        marginLeft: 26,
+    nextBtn: {
+        justifyContent: 'center', 
+        alignItems: 'center',
+        width: '100%',
+        height: 40,
+        backgroundColor: 'blue', 
         marginTop:10,
         alignItems: "center"
          
