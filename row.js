@@ -1,11 +1,43 @@
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableHighlight
+} from "react-native";
 
-import React from 'react'
-import { Alert, View, Text, ImageBackground, TouchableHighlight } from 'react-native';
+const styles = StyleSheet.create({
+  container: {
+    margin: 5,
+    width: 150,
+    height: 150,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  text: {
+    marginTop: 5,
+    textAlign: "center"
+  },
+  photo: {
+    width: 100,
+    height: 100,
+    borderWidth: 1.5,
+    borderColor: "white",
+    borderRadius: 50
+  }
+});
 
-const Row = (props) => ( 
-    <TouchableHighlight style={{flex: 1, height: 150}} onPress={() => props.onPress(props.itemInfo)}>
-      <Text style={{flex: 1, backgroundColor: props.itemInfo.color, fontSize: 30, textAlign: 'center', paddingTop: 60}}> {props.itemInfo.title}</Text>  
-    </TouchableHighlight>    
-)
+const Row = props => (
+  <View style={styles.container}>
+    <TouchableHighlight onPress={() => props.onPress(props.itemInfo)}>
+      <View>
+        <Image source={props.itemInfo.image} style={styles.photo} />
 
-export default Row
+        <Text style={styles.text}>{`${props.itemInfo.title} `}</Text>
+      </View>
+    </TouchableHighlight>
+  </View>
+);
+
+export default Row;
